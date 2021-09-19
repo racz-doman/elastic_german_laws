@@ -1,0 +1,55 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  # - deny
+  # - mood_great
+  # - mood_unhappy
+  - bot_challenge
+  - law_search
+  - actual_search
+
+entities:
+- law_keyword
+
+slots:
+  law_keyword:
+    type: any
+
+forms:
+  lawsearch_form:
+    law_keyword:
+    - type: from_text
+      intent: none
+
+actions:
+  - action_law_respond
+
+responses:
+  utter_search:
+  - text: "Was möchten Sie suchen? Bitte geben Sie die query."
+
+  utter_greet:
+  - text: "Guten Tag! Was könnte ich für Ihnen tun?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Hat Ihnen das geholfen?"
+
+  utter_happy:
+  - text: "Super, es freut mich!"
+
+  utter_goodbye:
+  - text: "Wiedersehen!"
+
+  utter_iamabot:
+  - text: "Ich bin ein bot, angetrieben von Rasa."
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

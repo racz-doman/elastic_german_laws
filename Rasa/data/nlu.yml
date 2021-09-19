@@ -1,0 +1,115 @@
+version: "2.0"
+
+nlu:
+- intent: actual_search
+  examples: |
+    - N4192513665P
+    - Nach dem Wissenshaft
+    - Nummeruns
+
+- intent: law_search
+  examples: |
+    - Ich möchte wissen
+    - Ich möchte suchen
+    - Ich suche
+    - Ich interessiere mich für
+    - Ich möchte stöbern
+    - Ich möchte durchsuchen
+    - Ich stöbere
+    - Ich suchlaufe
+
+- intent: greet
+  examples: |
+    - hello
+    - hallo
+    - hi
+    - hallo da
+    - guten Morgen
+    - guten Abend
+    - moin
+    - hey da
+    - Lass uns gehen
+    - hey Mann
+    - gutenmorgen
+    - gutenabend
+    - guten Nachmittag
+
+- intent: goodbye
+  examples: |
+    - guten Nachmittag
+    - bye
+    - auf Wiedersehen
+    - bis Spät
+    - gute Nacht
+    - tschüss
+    - auf wiedersehen
+    - bis zum Schönen Tag
+    - bis bald
+    - bis später
+    - see you later
+
+- intent: affirm
+  examples: |
+    - Ja
+    - yes
+    - y
+    - genau
+    - indeed
+    - naturlich
+    - das klingt gut
+    - korrekt
+    - correct
+
+# - intent: deny
+#   examples: |
+#     - no
+#     - nein
+#     - nah
+#     - ne
+#     - noch nie
+#     - das glaube ich nicht
+#     - mag das nicht
+#     - auf keinen Fall
+#     - nicht wirklich
+
+# - intent: mood_great
+#   examples: |
+#     - perfek
+#     - tolle
+#     - super
+#     - prima
+#     - Gefühl wie ein König
+#     - wunderbar 
+#     - Ich fühle mich sehr gut
+#     - I am great
+#     - Ich bin super
+#     - Ich werde die Welt retten
+#     - super begeistert
+#     - extrem gut
+#     - so so perfekt
+#     - so gut
+#     - so perfekt
+
+# - intent: mood_unhappy
+#   examples: |
+#     - my day was horrible
+#     - I am sad
+#     - I don't feel very well
+#     - I am disappointed
+#     - super sad
+#     - I'm so sad
+#     - sad
+#     - very sad
+#     - unhappy
+#     - not good
+#     - not very good
+#     - extremly sad
+#     - so saad
+#     - so sad
+
+- intent: bot_challenge
+  examples: |
+    - bist du ein bot?
+    - bist du ein Mensch?
+    - spreche ich mit einem bot?
+    - spreche ich mit einem Menschen?
