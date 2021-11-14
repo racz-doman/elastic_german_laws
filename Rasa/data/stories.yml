@@ -2,24 +2,6 @@ version: "2.0"
 
 stories:
 
-#- story: search for law
-#  steps:
-#  - intent: greet
-#  - action: utter_greet
-#  - intent: law_search
-#  - action: lawsearch_form
-#  - active_loop: lawsearch_form
-#  - slot_was_set:
-#    - requested_slot: law_keyword
- # - action: lawsearch_form
- # - intent: actual_search
- # - action: action_law_respond
-#  - active_loop: null
-#  - action: action_law_respond
-#  - action: utter_did_that_help
-#  - intent: affirm
-#  - action: utter_happy
-#  - action: utter_goodbye
 
 - story: interactive_story_1
   steps:
