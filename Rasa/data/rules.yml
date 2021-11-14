@@ -1,24 +1,40 @@
 version: "2.0"
 
 rules:
+  - rule: Activate Law Form
+    steps:
+    - intent: law_search  
+    - action: lawsearch_form
+    - active_loop: lawsearch_form
+
+  - rule: Submit Law Form
+    condition: 
+    - active_loop: lawsearch_form
+    steps:
+    - action: lawsearch_form
+    - active_loop: null
+    - slot_was_set:
+      - requested_slot: null
+    - action: action_law_respond
+    - action: utter_did_that_help
 
 # - rule: Activate form
 #   steps:
 #   - intent: law_search
 #   - action: lawsearch_form
 
-- rule: Say `hello` when the user starts a conversation with intent `greet`
-  conversation_start: true
-  steps:
-  - intent: greet
-  - action: utter_greet
+  - rule: Say `hello` when the user starts a conversation with intent `greet`
+    conversation_start: true
+    steps:
+    - intent: greet
+    - action: utter_greet
 
-- rule: Say goodbye anytime the user says goodbye
-  steps:
-  - intent: goodbye
-  - action: utter_goodbye
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
 
-- rule: Say 'I am a bot' anytime the user challenges
-  steps:
-  - intent: bot_challenge
-  - action: utter_iamabot
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+    - intent: bot_challenge
+    - action: utter_iamabot

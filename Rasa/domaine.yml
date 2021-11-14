@@ -3,30 +3,21 @@ session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- inform_category
-- law_search
 - affirm
 - greet
-- deny
+- law_search
 - goodbye
 - bot_challenge
-entities:
-- law_type
 slots:
   law_keyword:
     type: text
     influence_conversation: true
-  law_type:
-    type: text
-    influence_conversation: true
-  law_answer:
-    type: text
+  requested_slot:
+    type: unfeaturized
     influence_conversation: false
 responses:
   utter_ask_law_keyword:
   - text: Was möchten Sie suchen? Bitte geben Sie die query.
-  utter_ask_law_type:
-  - text: Nach welcher Kategorie möchten Sie suchen?
   utter_law_slots:
   - text: asdasd
   utter_submit:
@@ -50,14 +41,9 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_happy
-- validate_lawsearch_form
-- action_law_save
 forms:
   lawsearch_form:
     required_slots:
-      law_type:
-      - type: from_entity
-        entity: law_type
-        intent: inform_category
       law_keyword:
       - type: from_text
+        intent: affirm

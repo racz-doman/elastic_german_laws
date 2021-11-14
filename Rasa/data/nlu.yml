@@ -1,12 +1,5 @@
 version: "2.0"
-
 nlu:
-- intent: actual_search
-  examples: |
-    - N4192513665P
-    - Nach dem Wissenshaft
-    - Nummeruns
-
 - intent: law_search
   examples: |
     - Ich möchte wissen
@@ -17,7 +10,24 @@ nlu:
     - Ich möchte durchsuchen
     - Ich stöbere
     - Ich suchlaufe
-
+    - Ich möchte suchen!
+- intent: inform_category
+  examples: |
+    - Ich möchte nach [Justiz](law_type) suchen
+    - Ich interessiere mich für [Bundesnormen](law_type)
+    - [Justiz](law_type)
+    - [Verfassungsgerichtshof](law_type)
+    - [Regierungsvorlage](law_type)
+    - [Gemeinderecht](law_type)
+    - [Bundesnormen](law_type)
+    - [Landesgesetzblatt](law_type)
+    - [Normenliste](law_type)
+    - [Begutachtungsentwürfe](law_type)
+    - [Verwaltungsgerichtshof](law_type)
+    - [Landesnormen](law_type)
+    - Griechenland Österreich interessieren Minimalsätze Tarif Stelle
+    - [Bundesnormens](law_type)
+    - [Bundesnormen](law_type)
 - intent: greet
   examples: |
     - hello
@@ -33,7 +43,8 @@ nlu:
     - gutenmorgen
     - gutenabend
     - guten Nachmittag
-
+    - Hallo!
+    - Hallo
 - intent: goodbye
   examples: |
     - guten Nachmittag
@@ -47,7 +58,7 @@ nlu:
     - bis bald
     - bis später
     - see you later
-
+    - bye!
 - intent: affirm
   examples: |
     - Ja
@@ -59,57 +70,19 @@ nlu:
     - das klingt gut
     - korrekt
     - correct
-
-# - intent: deny
-#   examples: |
-#     - no
-#     - nein
-#     - nah
-#     - ne
-#     - noch nie
-#     - das glaube ich nicht
-#     - mag das nicht
-#     - auf keinen Fall
-#     - nicht wirklich
-
-# - intent: mood_great
-#   examples: |
-#     - perfek
-#     - tolle
-#     - super
-#     - prima
-#     - Gefühl wie ein König
-#     - wunderbar 
-#     - Ich fühle mich sehr gut
-#     - I am great
-#     - Ich bin super
-#     - Ich werde die Welt retten
-#     - super begeistert
-#     - extrem gut
-#     - so so perfekt
-#     - so gut
-#     - so perfekt
-
-# - intent: mood_unhappy
-#   examples: |
-#     - my day was horrible
-#     - I am sad
-#     - I don't feel very well
-#     - I am disappointed
-#     - super sad
-#     - I'm so sad
-#     - sad
-#     - very sad
-#     - unhappy
-#     - not good
-#     - not very good
-#     - extremly sad
-#     - so saad
-#     - so sad
-
+    - Ja genau
+    - ja
 - intent: bot_challenge
   examples: |
     - bist du ein bot?
     - bist du ein Mensch?
     - spreche ich mit einem bot?
     - spreche ich mit einem Menschen?
+- intent: deny
+  examples: |
+    - Nein
+    - No
+    - ne
+    - Ne
+    - Nah
+    - kein
