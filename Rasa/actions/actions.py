@@ -68,6 +68,7 @@ class ActionLawRespond(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         
         search_text = tracker.get_slot('law_keyword')
+        search_type = tracker.get_slot('law_type')
         es = Elasticsearch([{'host': 'localhost', 'port': 9200}])
         embedding = TransformerDocumentEmbeddings('bert-base-german-cased')
 
@@ -109,7 +110,7 @@ class ActionLawRespond(Action):
                     }
                 }
             }
-            result = es.search(index='bert_law', body=body)
+            result = es.search(index=search_type, body=body)
             lawAnswer = result['hits']['hits'][self.LAW_COUNT]['_source']['law']
             dispatcher.utter_message(lawAnswer)
             self.LAW_COUNT = self.LAW_COUNT + 1
