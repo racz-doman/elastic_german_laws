@@ -81,7 +81,7 @@ class ActionLawRespond(Action):
             embedding.embed(sentence)
             return sentence.embedding.detach().numpy()
         #"Griechenland Österreich interessieren Minimalsätze Tarif Stelle"
-        veki=vektorositas(search_text)
+        vector=vektorositas(search_text)
 
         body_match = {
             "query": {
@@ -105,7 +105,7 @@ class ActionLawRespond(Action):
                     "query": {"match_all": {}},
                     "script": {
                             "source": "cosineSimilarity(params.query_vector, 'law_vector') + 1.0",
-                            "params": {"query_vector": veki}
+                            "params": {"query_vector": vector}
                         }
                     }
                 }
