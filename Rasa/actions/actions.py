@@ -143,7 +143,7 @@ class ValidateLawsearchForm(FormValidationAction):
         """Validate `law_type` value."""
 
         if slot_value.lower() not in self.law_type_db():
-            dispatcher.utter_message(text=f"Derzeit verfügbare Kategorien: Begut, Bundesnormen, Gemeinderecht, Justiz, Landesnormen, Lgbl, Normenliste, RegV, Vfgh, Vwgh")
+            dispatcher.utter_message(text=f"Derzeit verfügbare Kategorien: Begut, Bundesnormen, Gemeinderecht, Justiz, Landesnormen, Landesgesetzblatt, Normenliste, Regierungsvorlage, Verfassungsgerichtshof, Verwaltungsgerichtshof")
             return {"law_type": None}
 
         return {"law_type": slot_value}
